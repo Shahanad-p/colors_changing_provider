@@ -7,7 +7,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final prov = Provider.of<ColorsListProvider>(context, listen: false);
     return Consumer<ColorsListProvider>(
       builder: (context, value, child) {
         return SafeArea(
@@ -23,7 +22,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   ElevatedButton(
                       onPressed: () {
-                        prov.changeColors();
+                        value.changeColors();
                       },
                       child: const Text('Click')),
                 ],
